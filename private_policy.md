@@ -1,30 +1,51 @@
-Privacy Policy for YT miniplayer extension
-Last Updated: 4/8/2025
- This privacy policy explains how we collect, use, and protect your information when you use our Extension.
+# Privacy Policy for YouTube Mini Player Extension
 
-Information We Collect
-Local Storage Data:
-Your previous youtube link is stored locally in your device.
-We do not save any of the stored data it is all stored locally on your browser
+**Last Updated: April 8, 2025**
 
-How We Use Your Information
-We don't:
+This privacy policy explains how we handle information when you use our YouTube Mini Player Extension.
 
-Data Security
-The Extension uses local storage within your browser, which is protected by the security measures of the browser itself.
+## Information Collection and Usage
 
-Third-Party Services
-The Extension does not share, sell, or distribute any user data to third parties. All data processing occurs locally within your browser.
+**Local Storage Only:**
+- The extension stores your most recently used YouTube URL locally in your browser's storage.
+- This data is used solely to improve your experience by remembering your last submitted video.
+- We do not collect, transmit, or store any user data on external servers.
+- All data is stored exclusively on your local device within your browser.
 
-User Control
-Uninstallation:
-You can uninstall the Extension at any time by removing it from your browser. This will delete all locally stored data associated with the Extension.
+## Permissions
 
-Changes to This Privacy Policy
-We may update this privacy policy from time to time. Any changes will be posted on this page, and the date of the update will be indicated at the top of the policy.
+**Why we need certain permissions:**
+- **Storage permission:** Required to save your last used YouTube URL locally.
+- **Active Tab permission:** Needed to create the mini player within your current web page.
+- **Host permissions:** Allows the mini player to function on any website you visit.
 
-Contact Us
+## Data Security
+
+The extension uses your browser's built-in local storage capabilities, which are protected by your browser's security measures. Since no data leaves your device, your information remains private.
+
+## Third-Party Services
+
+The extension embeds YouTube videos through YouTube's official iframe API. While viewing videos, YouTube's own privacy policy applies to your interaction with their content.
+
+The extension does not:
+- Share any data with third parties
+- Collect analytics or usage statistics
+- Use tracking technologies
+
+## User Control
+
+**Managing Your Data:**
+- You can clear your browser's local storage at any time to remove stored YouTube URLs.
+- Uninstalling the extension will completely remove all locally stored data associated with it.
+
+## Changes to This Privacy Policy
+
+We may update this privacy policy periodically. Changes will be posted on this page with the date of the update indicated at the top.
+
+## Contact Us
+
 If you have any questions or concerns about this privacy policy, please contact us at:
 
 Email: voraaryan1(at)gmail(dot)com
-By using the PokerNow Assistant Browser Extension, you agree to the terms outlined in this privacy policy.
+
+By using the YouTube Mini Player Extension, you agree to the terms outlined in this privacy policy.
