@@ -39,6 +39,19 @@ function createMiniPlayer(youtubeUrl) {
   header.style.background = '#333';
   header.style.cursor = 'move';
   
+  const resizeHandle = document.createElement('div');
+  resizeHandle.id = 'yt-mini-player-resize';
+  resizeHandle.innerHTML = '&#8596;';
+  resizeHandle.title = 'Resize';
+  resizeHandle.style.color = 'white';
+  resizeHandle.style.fontSize = '16px';
+  resizeHandle.style.cursor = 'se-resize';
+  resizeHandle.style.width = '30px';
+  resizeHandle.style.height = '30px';
+  resizeHandle.style.display = 'flex';
+  resizeHandle.style.justifyContent = 'center';
+  resizeHandle.style.alignItems = 'center';
+  
   const dragIndicator = document.createElement('div');
   dragIndicator.id = 'yt-mini-player-drag-indicator';
   dragIndicator.innerHTML = '&#8801;';
@@ -62,6 +75,7 @@ function createMiniPlayer(youtubeUrl) {
   closeBtn.style.justifyContent = 'center';
   closeBtn.style.alignItems = 'center';
   
+  header.appendChild(resizeHandle);
   header.appendChild(dragIndicator);
   header.appendChild(closeBtn);
   
@@ -81,6 +95,7 @@ function createMiniPlayer(youtubeUrl) {
   document.body.appendChild(container);
   
   makeDraggable(container, header);
+  makeResizable(container, resizeHandle);
   
   closeBtn.addEventListener('click', () => {
     container.remove();
@@ -131,7 +146,51 @@ function makeDraggable(element, handle) {
   }
 }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+function makeResizable(element, handle) {
+  let startWidth, startHeight, startTop, startLeft;
+  
+  handle.onmousedown = resizeMouseDown;
+  
+  function resizeMouseDown(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    startWidth = parseInt(document.defaultView.getComputedStyle(element).width, 10);
+    startHeight = parseInt(document.defaultView.getComputedStyle(element).height, 10);
+    startTop = element.offsetTop;
+    startLeft = element.offsetLeft;
+    
+    const bottomRightX = startLeft + startWidth;
+    const bottomRightY = startTop + startHeight;
+    
+    document.onmouseup = stopResize;
+    document.onmousemove = function(e) { resizeElement(e, bottomRightX, bottomRightY); };
+  }
+  
+  function resizeElement(e, fixedX, fixedY) {
+    e.preventDefault();
+    
+    const newLeft = Math.min(e.clientX, fixedX - 200);
+    const newTop = Math.min(e.clientY, fixedY - 150);
+    
+    const newWidth = fixedX - newLeft;
+    const newHeight = fixedY - newTop;
+    
+    if (newLeft >= 0 && newTop >= 0) {
+      element.style.left = newLeft + 'px';
+      element.style.top = newTop + 'px';
+      element.style.width = newWidth + 'px';
+      element.style.height = newHeight + 'px';
+    }
+  }
+  
+  function stopResize() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+chrome.runtime.onMessage.addListener((message) => {
   if (message.action === "createMiniPlayer") {
     createMiniPlayer(message.youtubeUrl);
   }
