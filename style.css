@@ -1,0 +1,79 @@
+body {
+  font-family: sans-serif;
+  padding: 10px;
+  width: 200px;
+}
+input {
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+}
+#statusMessage {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  min-height: 20px;
+}
+.success {
+  color: green;
+}
+.error {
+  color: red;
+}
+input.error-field {
+  border: 2px solid red;
+}
+
+#yt-mini-player-container {
+  position: fixed; 
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  height: 240px;
+  background: #000;
+  border: 2px solid #888;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 2147483647; /* this is tech*/
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#yt-mini-player-header {
+  height: 30px;
+  background: #333;
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  user-select: none;
+}
+
+#yt-mini-player-drag-indicator {
+  color: white;
+  font-size: 18px;
+  cursor: move;
+  flex: 1;
+  text-align: center;
+}
+
+#yt-mini-player-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+#yt-mini-player-iframe {
+  flex-grow: 1;
+  border: none;
+}
