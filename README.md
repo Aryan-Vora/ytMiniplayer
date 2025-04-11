@@ -12,8 +12,8 @@ A browser extension that allows you to have a floating mini player that allows y
 ## Installation
 
 ### Chrome
-I still have to go through the process of uploading this to the chrome web store (it usually takes a week)
-
+[Chrome web store
+](https://chromewebstore.google.com/detail/yt-miniplayer/mhgdmmongacklkohonikomafknambfcm?authuser=2&hl=en&pli=1)
 ### Manual Installation (Developer Mode)
 1. Clone this repository or download the ZIP file
 2. For Chrome:
