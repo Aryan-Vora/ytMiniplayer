@@ -98,22 +98,7 @@ function createMiniPlayer(youtubeUrl) {
   makeResizable(container, resizeHandle);
 
   closeBtn.addEventListener('click', () => {
-    // pause then remove because the iframe is not removed immediately
-    const iframe = document.getElementById('yt-mini-player-iframe');
-    if (iframe) {
-      iframe.contentWindow.postMessage(JSON.stringify({
-        event: 'command',
-        func: 'pauseVideo',
-        args: []
-      }), '*');
-
-      // If pausing takes longer than 200ms you've got other problems
-      setTimeout(() => {
-        container.remove();
-      }, 200);
-    } else {
       container.remove();
-    }
   });
 }
 function makeDraggable(element, handle) {

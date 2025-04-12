@@ -8,6 +8,22 @@ input {
   margin: 10px 0;
   border: 1px solid #ccc;
 }
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+button {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: #e0e0e0;
+}
 #statusMessage {
   margin-top: 10px;
   font-weight: bold;

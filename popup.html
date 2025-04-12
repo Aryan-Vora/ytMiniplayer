@@ -8,10 +8,13 @@
 </head>
 
 <body>
-    <h1>YouTube Mini-player</h1>
+    <h1>YT Mini-Player</h1>
     <label for="link">YouTube URL:</label>
     <input type="text" id="link" placeholder="https://www.youtube.com/watch?v=..." />
-    <button id="submitBtn">Create Mini-player</button>
+    <div class="button-container">
+        <button id="createMiniPlayerBtn">Create Mini-Player</button>
+        <button id="createWindowBtn">Create Window</button>
+    </div>
     <div id="statusMessage"></div>
     <script src="popup.js"></script>
 </body>
